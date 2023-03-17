@@ -9,14 +9,33 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
 
-
+    let _appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var isLoggedIn = false
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        _appDelegate.window = window
+        window.overrideUserInterfaceStyle = .light
+
+        let defaults = UserDefaults.standard
+        if let userName = defaults.value(forKey: "userName") as? String {
+            print("User name: \(userName)")
+            let LoginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController( withIdentifier: "TableViewController") as! TableViewController
+            let navigation = UINavigationController(rootViewController:LoginVC)
+            window.rootViewController = navigation
+        } else {
+            print("User name not found.")
+            let LoginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController( withIdentifier: "ViewController") as! ViewController
+            let navigation = UINavigationController(rootViewController:LoginVC)
+            window.rootViewController = navigation
+        }
+
+
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

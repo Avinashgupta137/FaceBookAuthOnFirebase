@@ -18,6 +18,10 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = UserDefaults.standard
+        defaults.set("John Doe", forKey: "userName")
+        
+        
         getJson() { [self] (json) in
             DispatchQueue.main.sync {
                 if let articles = json.articles {
@@ -30,6 +34,13 @@ class TableViewController: UIViewController {
             
         }
       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     //MARK: - API CALLING
     func getJson(completion: @escaping (Json4Swift_Base)-> ()) {
@@ -63,7 +74,7 @@ extension TableViewController : UITableViewDelegate , UITableViewDataSource {
         cell.lblSourceName.text = articlesArray[indexPath.row].source?.name
         cell.lblTitle.text = articlesArray[indexPath.row].title
         if let outputDateString = Date.convertDateFormat(inputDateString: articlesArray[indexPath.row].publishedAt!, inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ", outputDateFormat: "yyyy-MM-dd") {
-            print(outputDateString) // prints "2023-03-16"
+          //  print(outputDateString) // prints "2023-03-16"
             cell.lblDate.text = outputDateString
         }
         

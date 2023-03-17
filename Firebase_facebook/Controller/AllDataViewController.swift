@@ -28,12 +28,19 @@ class AllDataViewController: UIViewController {
                }
         
         if let outputDateString = Date.convertDateFormat(inputDateString: (data?.publishedAt)!, inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ", outputDateFormat: "yyyy-MM-dd") {
-            print(outputDateString) // prints "2023-03-16"
+          //  print(outputDateString) // prints "2023-03-16"
             lblDate.text = outputDateString
         }
 
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

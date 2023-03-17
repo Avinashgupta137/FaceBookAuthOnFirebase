@@ -20,7 +20,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Firebase_facebook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Firebase_facebook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,10 +42,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hT1-vt-afq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADLINES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gB-8V-AnT">
-                                        <rect key="frame" x="70" y="48" width="274" height="34"/>
+                                        <rect key="frame" x="70" y="92" width="274" height="34"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="29"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -59,10 +59,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xf-JR-xfh">
-                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="716"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0lt-iK-MAL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="760"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                                         <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DetailTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="224" id="jNE-8D-BhK" customClass="DetailTableViewCell" customModule="Firebase_facebook" customModuleProvider="target">
@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipd-fj-zVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710.144927536232" y="48.883928571428569"/>
+            <point key="canvasLocation" x="3620.289855072464" y="48.883928571428569"/>
         </scene>
         <!--All Data View Controller-->
         <scene sceneID="R6T-KD-SPS">
@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeJ-xT-Ztx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3581.1594202898555" y="56.919642857142854"/>
+            <point key="canvasLocation" x="4491.304347826087" y="56.919642857142854"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="g6Y-i2-p1Z">
@@ -347,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Iq-5W-JVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4955.072463768116" y="39.508928571428569"/>
+            <point key="canvasLocation" x="5863.768115942029" y="39.508928571428569"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ef8-o5-EDp">
@@ -397,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Si-ZF-oAz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5778.2608695652179" y="113.83928571428571"/>
+            <point key="canvasLocation" x="6688.4057971014499" y="113.83928571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Feo-Va-gcv">
@@ -415,6 +415,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98z-Yk-Qr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="48.883928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UYI-hE-Ope">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1MW-uM-sBK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NmP-GV-lLJ">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LEl-0f-t8r" kind="relationship" relationship="rootViewController" id="IY4-oi-gwJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yyr-j4-TBs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2710.144927536232" y="48.883928571428569"/>
         </scene>
     </scenes>
     <resources>
