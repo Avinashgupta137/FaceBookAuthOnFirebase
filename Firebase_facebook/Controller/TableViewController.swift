@@ -33,7 +33,7 @@ class TableViewController: UIViewController {
     }
     //MARK: - API CALLING
     func getJson(completion: @escaping (Json4Swift_Base)-> ()) {
-        let urlString = "https://newsapi.org/v2/everything?q=tesla&from=2023-02-16&sortBy=publishedAt&apiKey=593f5a82de084c33afe3c1955d829e8d"
+        let urlString = "https://newsapi.org/v2/everything?q=tesla&from=2023-02-17&sortBy=publishedAt&apiKey=593f5a82de084c33afe3c1955d829e8d"
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) {data, res, err in
                 if let data = data {
@@ -59,10 +59,13 @@ extension TableViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DetailTableViewCell
         
-        cell.lblDate.text = articlesArray[indexPath.row].publishedAt
+       // cell.lblDate.text = articlesArray[indexPath.row].publishedAt
         cell.lblSourceName.text = articlesArray[indexPath.row].source?.name
         cell.lblTitle.text = articlesArray[indexPath.row].title
-       
+        if let outputDateString = Date.convertDateFormat(inputDateString: articlesArray[indexPath.row].publishedAt!, inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ", outputDateFormat: "yyyy-MM-dd") {
+            print(outputDateString) // prints "2023-03-16"
+            cell.lblDate.text = outputDateString
+        }
         
         if let imageUrlString = articlesArray[indexPath.row].urlToImage, let imageUrl = URL(string: imageUrlString) {
             cell.imgView.kf.setImage(with: imageUrl)
