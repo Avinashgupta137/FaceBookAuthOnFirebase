@@ -53,3 +53,17 @@ class ViewController: UIViewController, LoginButtonDelegate {
             navigationController?.pushViewController(vc!, animated: true)
     }
 }
+extension Date {
+    static func convertDateFormat(inputDateString: String, inputDateFormat: String, outputDateFormat: String) -> String? {
+        let inputDateFormatter = DateFormatter()
+        inputDateFormatter.dateFormat = inputDateFormat
+
+        if let date = inputDateFormatter.date(from: inputDateString) {
+            let outputDateFormatter = DateFormatter()
+            outputDateFormatter.dateFormat = outputDateFormat
+            let outputDateString = outputDateFormatter.string(from: date)
+            return outputDateString
+        }
+        return nil
+    }
+}

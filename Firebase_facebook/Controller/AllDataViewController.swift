@@ -22,10 +22,18 @@ class AllDataViewController: UIViewController {
         lblDescription.text = data?.description
         lblTitle.text = data?.title
         lblSourceCnn.text = data?.source?.name
-        lblDate.text = data?.publishedAt
+        //lblDate.text = data?.publishedAt
         if let urlString = data?.urlToImage, let url = URL(string: urlString) {
                    img.load(url: url)
                }
+        
+        if let outputDateString = Date.convertDateFormat(inputDateString: (data?.publishedAt)!, inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ", outputDateFormat: "yyyy-MM-dd") {
+            print(outputDateString) // prints "2023-03-16"
+            lblDate.text = outputDateString
+        }
+
+        
+        
     }
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
